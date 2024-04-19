@@ -1,0 +1,114 @@
+<%- include('partials/header'); %> <%- include('partials/sidebar'); %>
+
+<main class="pt-5">
+  <div class="row">
+    <div class="col-12 col-lg-6">
+      <div class="main-content m-lg-auto">
+        <!-- <div class="row justify-content-center">
+          <div class="col-md-auto anta-regular">
+            <h1>
+              <i class="fa-solid fa-x"></i>
+              <span>Twitter</span>
+            </h1>
+          </div>
+        </div> -->
+        <div class="anta-regular text-center">
+          <h1>
+            <i class="fa-solid fa-x"></i>
+            <span>Twitter</span>
+          </h1>
+          <p class="poppins-regular">Change Settings</p>
+        </div>
+        <!-- <div class="row justify-content-center poppins-regular">
+            <div class="col-md-auto">
+              <h5>Sign Up</h5>
+            </div>
+          </div> -->
+        <form class="row g-3" id="userdata-form">
+          <div class="col-10 d-flex flex-column align-items-start">
+            <label for="inputName" class="form-label">
+              <i class="fa-solid fa-user"></i> Name
+            </label>
+            <input
+              type="text"
+              name="name"
+              class="form-control"
+              id="inputName"
+              value="<%= user.name %>"
+            />
+          </div>
+          <div class="col-10 d-flex flex-column align-items-start">
+            <label for="inputEmail" class="form-label"
+              ><i class="fa-solid fa-envelope"></i> Email
+            </label>
+            <input
+              type="email"
+              name="email"
+              class="form-control"
+              id="inputEmail"
+              value="<%= user.email %>"
+            />
+          </div>
+          <div class="col-10 d-flex flex-column align-items-start">
+            <label for="inputUserName" class="form-label">
+              <i class="fa-solid fa-user"></i> username
+            </label>
+            <input
+              type="text"
+              name="username"
+              class="form-control"
+              id="inputUserName"
+              value="<%= user.username %>"
+            />
+          </div>
+          <div class="col-10 d-flex flex-column align-items-start">
+            <label for="userPhoto" class="form-label"
+              ><i class="fa-solid fa-user"></i> Change Your Profile
+              Picture</label
+            >
+            <input
+              class="form-control"
+              name="photo"
+              type="file"
+              id="userPhoto"
+            />
+          </div>
+          <div class="col-10 d-flex flex-column align-items-start">
+            <label for="inputCurrentPassword" class="form-label">
+              <i class="fa-solid fa-lock"></i> Current Password</label
+            >
+            <input
+              type="password"
+              name="currentPassword"
+              class="form-control"
+              id="inputCurrentPassword"
+            />
+          </div>
+          <div class="col-10 d-flex flex-column align-items-start">
+            <label for="inputNewPassword" class="form-label">
+              <i class="fa-solid fa-lock"></i> New password</label
+            >
+            <input
+              type="password"
+              name="newPassword"
+              class="form-control"
+              id="inputNewPassword"
+            />
+          </div>
+          <div class="col-10 d-flex justify-content-between">
+            <button type="button" class="btn text-bg-primary" id="logout">
+              Logout
+            </button>
+            <button type="submit" class="btn text-bg-primary">
+              Change Settings
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="col-12 d-none d-lg-block col-lg-6">
+      <%- include('partials/sideContent'); %>
+    </div>
+  </div>
+</main>
+<%- include('partials/footer'); %>

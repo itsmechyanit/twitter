@@ -1,0 +1,47 @@
+<nav class="sidebar">
+  <div class="d-flex justify-content-end h-100">
+    <ul class="d-flex flex-column gap-4">
+      <li>
+        <a href="/tweets" class="d-inline-flex align-items-center gap-3">
+          <i class="fa-solid fa-x"></i>
+        </a>
+      </li>
+      <li>
+        <a href="/tweets" class="d-inline-flex align-items-center gap-3">
+          <i class="fa-solid fa-house"></i>
+          <span class="d-none d-xl-block">Home</span>
+        </a>
+      </li>
+      <li>
+        <a href="/search" class="d-inline-flex align-items-center gap-3">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <span class="d-none d-xl-block">Explore</span>
+        </a>
+      </li>
+      <li>
+        <a href="/profile" class="d-inline-flex align-items-center gap-3">
+          <i class="fa-regular fa-user"></i>
+          <span class="d-none d-xl-block">Profile</span>
+        </a>
+      </li>
+      <li class="mt-auto">
+        <a href="/profile" class="d-flex align-items-center gap-3">
+          <img
+            src="/img/users/<%= user.photo %>"
+            alt="<%= user.name %> photo"
+            class="profile-image"
+          />
+          <div class="d-none d-xl-flex flex-column">
+            <span class="fw-bold" style="font-size: 16px"
+              ><%= user.name %></span
+            >
+            <span class="text-secondary" style="font-size: 16px"
+              >@<%= user.username %></span
+            >
+          </div>
+          <span class="d-none d-xl-block ms-auto">...</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>

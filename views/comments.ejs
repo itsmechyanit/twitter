@@ -1,0 +1,90 @@
+<%- include('partials/header'); %> <%- include('partials/sidebar'); %>
+
+<main class="pt-5">
+  <div class="row">
+    <div class="col-12 col-lg-6">
+      <div class="main-content m-lg-auto">
+        <h1 class="text-center mb-3 fw-bold" style="font-size: 1.5rem">
+          Tweet
+        </h1>
+        <div
+          class="card bg-transparent border-secondary mb-4"
+          style="color: rgb(231, 233, 234)"
+        >
+          <div class="card-body">
+            <div class="d-flex gap-2">
+              <div class="align-items-start flex-shrink-0">
+                <a href="/users/<%= tweet.postedBy.id %>"
+                  ><img
+                    src="/img/users/<%= tweet.postedBy.photo %>"
+                    alt="<%= tweet.postedBy.name %>"
+                    class="profile-image"
+                /></a>
+              </div>
+              <div class="flex-grow-1">
+                <div class="d-flex gap-2 align-items-center">
+                  <a
+                    href="/users/<%= tweet.postedBy.id %>"
+                    class="text-decoration-none"
+                    style="color: rgb(231, 233, 234)"
+                    ><span class="name fw-bold" style="font-size: 16px"
+                      ><%= tweet.postedBy.name %></span
+                    ></a
+                  >
+                  <span class="username text-secondary"
+                    >@<%= tweet.postedBy.username %></span
+                  >
+                  <span class="time text-secondary"
+                    ><%= tweet.createdAt.toLocaleString('default', { month:
+                    'long' }) %> <%= tweet.createdAt.getDate() %></span
+                  >
+                  <span class="ms-auto">...</span>
+                </div>
+                <p><%= tweet.description %></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card bg-transparent border-secondary mb-4">
+          <div class="card-body">
+            <div class="d-flex gap-2">
+              <div class="align-items-start flex-shrink-0">
+                <img
+                  src="/img/users/<%= user.photo %>"
+                  alt="<%= user.name %> photo"
+                  class="profile-image"
+                />
+              </div>
+              <div class="flex-grow-1">
+                <form
+                  action="/comments/<%= tweetId %>"
+                  method="POST"
+                  class="d-flex flex-column"
+                >
+                  <textarea
+                    name="description"
+                    placeholder="Post a comment on this tweet"
+                    class="bg-transparent border-0"
+                    style="width: 100%; color: rgb(231, 233, 234) !important"
+                  ></textarea>
+                  <button class="btn text-bg-primary align-self-end mt-3">
+                    Comment
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <h1 class="text-center mb-3 fw-bold" style="font-size: 1.5rem">
+          All Comments on this Tweet
+        </h1>
+        <% comments.forEach(comment=> { %> <%- include('comment', {comment}) %>
+        <%} )%>
+      </div>
+    </div>
+    <div class="col-12 d-none d-lg-block col-lg-6">
+      <%- include('partials/sideContent'); %>
+    </div>
+  </div>
+</main>
+<%- include('partials/footer'); %>

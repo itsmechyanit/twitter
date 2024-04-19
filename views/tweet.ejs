@@ -1,0 +1,61 @@
+<div
+  class="card bg-transparent border-secondary mb-3"
+  style="color: rgb(231, 233, 234)"
+>
+  <div class="card-body">
+    <div class="d-flex gap-2">
+      <div class="align-items-start flex-shrink-0">
+        <a href="/users/<%= tweet.postedBy.id %>"
+          ><img
+            src="/img/users/<%= tweet.postedBy.photo %>"
+            alt="<%= tweet.postedBy.name %>"
+            class="profile-image"
+        /></a>
+      </div>
+      <div class="flex-grow-1">
+        <div class="d-flex gap-2 align-items-center">
+          <a
+            href="/users/<%= tweet.postedBy.id %>"
+            class="text-decoration-none"
+            style="color: rgb(231, 233, 234)"
+            ><span class="name fw-bold" style="font-size: 16px"
+              ><%= tweet.postedBy.name %></span
+            ></a
+          >
+          <span class="username text-secondary"
+            >@<%= tweet.postedBy.username %></span
+          >
+          <span class="time text-secondary"
+            ><%= tweet.createdAt.toLocaleString('default', { month: 'short' })
+            %> <%= tweet.createdAt.getDate() %></span
+          >
+          <span class="ms-auto">...</span>
+        </div>
+        <p><%= tweet.description %></p>
+        <div class="d-flex gap-3" style="font-size: 16px">
+          <a
+            href="/comments/<%= tweet.id %>"
+            class="text-decoration-none text-secondary"
+            ><span
+              ><i class="fa-regular fa-comment"></i> <%= numComments %></span
+            ></a
+          >
+          <a
+            href="/likes/<%= tweet.id %>"
+            class="text-decoration-none text-secondary"
+            ><span>
+              <% if(likedByLoggedInUser) { %>
+              <i class="fa-solid fa-heart" style="color: red"></i>
+
+              <% } else { %>
+              <i class="fa-regular fa-heart"></i> <% } %> <%= tweet.numLikes
+              %></span
+            ></a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <i class="fa-regular fa-heart"></i> 6 -->

@@ -1,0 +1,49 @@
+<%- include('partials/header'); %> <%- include('partials/sidebar'); %>
+
+<main class="pt-5">
+  <div class="row">
+    <div class="col-12 col-lg-6">
+      <div class="main-content m-lg-auto">
+        <div
+          class="d-flex gap-2 rounded-4"
+          style="
+            width: 100%;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 0.8rem;
+            position: relative;
+          "
+          id="user-container"
+        >
+          <span class="text-secondary"
+            ><i class="fa-solid fa-magnifying-glass"></i
+          ></span>
+          <input
+            type="search"
+            placeholder="search for other users"
+            class="w-100 bg-transparent border-0"
+            name="user"
+            id="special"
+          />
+          <ul
+            class="search-toggler"
+            style="
+              width: 100%;
+              background: rgba(255, 255, 255, 0.15);
+              padding: 0.8rem;
+              position: absolute;
+              top: 100%;
+              list-style: none;
+              left: 0;
+
+              display: none;
+            "
+          ></ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 d-none d-lg-block col-lg-6">
+      <%- include('partials/sideContent'); %>
+    </div>
+  </div>
+</main>
+<%- include('partials/footer'); %>

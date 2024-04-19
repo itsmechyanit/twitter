@@ -1,0 +1,57 @@
+<%- include('partials/header'); %>
+<div class="index-container">
+  <div class="container text-center">
+    <div class="row justify-content-center">
+      <div class="col-md-auto anta-regular">
+        <h1>
+          <i class="fa-solid fa-x"></i>
+          <span>Twitter</span>
+        </h1>
+      </div>
+    </div>
+    <div class="row justify-content-center poppins-regular">
+      <div class="col-md-auto">
+        <h5>
+          Login <br />
+          Welcome Back!
+        </h5>
+      </div>
+    </div>
+    <form class="row g-3 justify-content-center" id="login-form">
+      <div class="col-10 col-md-7 d-flex flex-column align-items-start">
+        <label for="inputEmail" class="form-label">
+          <i class="fa-solid fa-envelope"></i> Email
+        </label>
+        <input
+          type="email"
+          name="email"
+          class="form-control"
+          id="inputEmail"
+          required
+        />
+      </div>
+      <div class="col-10 col-md-7 d-flex flex-column align-items-start">
+        <label for="inputPassword" class="form-label">
+          <i class="fa-solid fa-lock"></i> Password</label
+        >
+        <input
+          type="password"
+          name="password"
+          class="form-control"
+          id="inputPassword"
+          required
+        />
+      </div>
+      <div class="col-10 col-md-7 d-flex justify-content-end">
+        <button type="submit" class="btn text-bg-primary">Log In</button>
+      </div>
+    </form>
+    <p class="mt-4">
+      <a href="/register" style="text-decoration: none" class="text-white">
+        new user? click here to register
+      </a>
+    </p>
+  </div>
+</div>
+
+<%- include('partials/footer'); %>

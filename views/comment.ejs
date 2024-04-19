@@ -1,0 +1,39 @@
+<div
+  class="card bg-transparent border-secondary mb-3"
+  style="color: rgb(231, 233, 234)"
+>
+  <div class="card-body">
+    <div class="d-flex gap-2">
+      <div class="align-items-start flex-shrink-0">
+        <a href="/users/<%= comment.postedBy.id %>"
+          ><img
+            src="/img/users/<%= comment.postedBy.photo %>"
+            alt="<%= comment.postedBy.name %>"
+            class="profile-image"
+        /></a>
+      </div>
+      <div class="flex-grow-1">
+        <div class="d-flex gap-2 align-items-center">
+          <a
+            href="/users/<%= comment.postedBy.id %>"
+            style="color: rgb(231, 233, 234); text-decoration: none"
+            ><span class="name fw-bold" style="font-size: 16px"
+              ><%= comment.postedBy.name %></span
+            ></a
+          >
+          <span class="username text-secondary"
+            >@<%= comment.postedBy.username %></span
+          >
+          <span class="time text-secondary"
+            ><%= comment.createdAt.toLocaleString('default', { month: 'short' })
+            %> <%= comment.createdAt.getDate() %></span
+          >
+          <span class="ms-auto">...</span>
+        </div>
+        <p><%= comment.description %></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <i class="fa-regular fa-heart"></i> 6 -->
