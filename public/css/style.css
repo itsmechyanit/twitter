@@ -158,6 +158,11 @@ div#user-container > input#special {
     display: none;
   }
 
+  #userdata-form > div {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
   main {
     margin-left: 1%;
   }
