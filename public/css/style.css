@@ -138,13 +138,20 @@ div#user-container > input#special {
   .sidebar {
     bottom: 0 !important;
     width: 100%;
+    background: black !important;
 
-    height: auto !important;
+    height: 3rem !important;
+  }
+
+  .sidebar > div:first-of-type {
+    justify-content: space-between !important;
   }
 
   .sidebar ul {
     flex-direction: row !important;
     justify-content: space-between !important;
+    width: 100% !important;
+    padding-right: 2rem;
   }
 
   .sidebar ul > li:last-of-type {
