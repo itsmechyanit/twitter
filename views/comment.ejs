@@ -13,7 +13,7 @@
         /></a>
       </div>
       <div class="flex-grow-1">
-        <div class="d-flex gap-2 align-items-center">
+        <div class="d-flex gap-2 align-items-center" id="posted-by-user">
           <a
             href="/users/<%= comment.postedBy.id %>"
             style="color: rgb(231, 233, 234); text-decoration: none"
@@ -21,14 +21,16 @@
               ><%= comment.postedBy.name %></span
             ></a
           >
-          <span class="username text-secondary"
-            >@<%= comment.postedBy.username %></span
-          >
-          <span class="time text-secondary"
-            ><%= comment.createdAt.toLocaleString('default', { month: 'short' })
-            %> <%= comment.createdAt.getDate() %></span
-          >
-          <span class="ms-auto">...</span>
+          <div class="d-flex gap-2 flex-grow-1 align-items-center">
+            <span class="username text-secondary"
+              >@<%= comment.postedBy.username %></span
+            >
+            <span class="time text-secondary"
+              ><%= comment.createdAt.toLocaleString('default', { month: 'short'
+              }) %> <%= comment.createdAt.getDate() %></span
+            >
+            <span class="ms-auto">...</span>
+          </div>
         </div>
         <p><%= comment.description %></p>
       </div>

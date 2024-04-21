@@ -13,7 +13,7 @@
         /></a>
       </div>
       <div class="flex-grow-1">
-        <div class="d-flex gap-2 align-items-center">
+        <div class="d-flex gap-2 align-items-center" id="posted-by-user">
           <a
             href="/users/<%= tweet.postedBy.id %>"
             class="text-decoration-none"
@@ -22,14 +22,16 @@
               ><%= tweet.postedBy.name %></span
             ></a
           >
-          <span class="username text-secondary"
-            >@<%= tweet.postedBy.username %></span
-          >
-          <span class="time text-secondary"
-            ><%= tweet.createdAt.toLocaleString('default', { month: 'short' })
-            %> <%= tweet.createdAt.getDate() %></span
-          >
-          <span class="ms-auto">...</span>
+          <div class="d-flex gap-2 flex-grow-1 align-items-center">
+            <span class="username text-secondary"
+              >@<%= tweet.postedBy.username %></span
+            >
+            <span class="time text-secondary"
+              ><%= tweet.createdAt.toLocaleString('default', { month: 'short' })
+              %> <%= tweet.createdAt.getDate() %></span
+            >
+            <span class="ms-auto">...</span>
+          </div>
         </div>
         <p><%= tweet.description %></p>
         <div class="d-flex gap-3" style="font-size: 16px">

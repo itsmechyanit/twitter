@@ -167,3 +167,11 @@ div#user-container > input#special {
     margin-left: 1%;
   }
 }
+
+@media (max-width: 420px) {
+  #posted-by-user {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0px !important;
+  }
+}
