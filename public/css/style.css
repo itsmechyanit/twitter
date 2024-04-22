@@ -174,4 +174,7 @@ div#user-container > input#special {
     align-items: stretch !important;
     gap: 0px !important;
   }
+  #posted-by-user > div:first-of-type {
+    margin-top: -5px;
+  }
 }
